@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111722">
+  <meta name="description" content="Atelier PNJ 3D : prépare une image et transforme-la en modèle 3D GLB avec TRELLIS.">
+  <title>Atelier PNJ 3D</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="brand-mark">✦</span> ATELIER <b>PNJ 3D</b></a>
+    <span class="top-note">STUDIO DE CRÉATION · VERSION GRATUITE</span>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">DE L'IMAGE AU PERSONNAGE</p>
+      <h1>Donne vie à tes<br><span>personnages 3D.</span></h1>
+      <p class="intro">Prépare ton concept, génère un modèle 3D avec TRELLIS et récupère ton fichier GLB pour ton jeu ou ton projet.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / TON CONCEPT</p><h2>Choisir une image</h2></div>
+        <span class="pill">PNG · JPG · WEBP</span>
+      </div>
+
+      <label class="dropzone" id="dropzone" for="imageInput">
+        <input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp">
+        <div id="emptyState" class="empty-state">
+          <span class="upload-icon">↑</span>
+          <strong>Dépose ton image ici</strong>
+          <span>ou clique pour parcourir tes fichiers</span>
+          <small>Conseil : personnage entier, bien visible, fond simple.</small>
+        </div>
+        <img id="preview" alt="Aperçu de l'image sélectionnée" hidden>
+      </label>
+      <div class="file-row">
+        <span id="fileName">Aucune image sélectionnée</span>
+        <button id="clearButton" class="text-button" type="button" hidden>Retirer l'image</button>
+      </div>
+
+      <div class="divider"></div>
+      <div class="section-heading">
+        <div><p class="eyebrow">02 / GÉNÉRATION 3D</p><h2>Créer le modèle</h2></div>
+        <span class="pill free">Sans abonnement à cette interface</span>
+      </div>
+      <p class="help">Le calcul 3D est réalisé par le Space officiel TRELLIS sur Hugging Face. Ton image devra être importée dans ce service après son ouverture.</p>
+      <button id="launchButton" class="primary-button" type="button" disabled>
+        <span>Ouvrir TRELLIS pour générer</span><span aria-hidden="true">↗</span>
+      </button>
+      <p id="status" class="status" role="status">Ajoute une image pour commencer.</p>
+    </section>
+
+    <section class="steps">
+      <article><span>01</span><h3>Prépare</h3><p>Choisis une image nette de ton PNJ, idéalement de face et avec le corps entier visible.</p></article>
+      <article><span>02</span><h3>Génère</h3><p>Dans TRELLIS, importe l'image et lance la génération 3D. L'attente dépend de la disponibilité du service.</p></article>
+      <article><span>03</span><h3>Exporte</h3><p>Télécharge le GLB depuis TRELLIS lorsqu'il est prêt, puis ouvre-le dans Blender ou ton moteur 3D.</p></article>
+    </section>
+
+    <aside class="notice">
+      <strong>À propos du gratuit</strong>
+      <p>GitHub Pages héberge gratuitement cette interface statique. TRELLIS utilise les ressources et quotas de Hugging Face, qui peuvent être limités ou indisponibles temporairement. Cette page ne lance pas encore la génération automatiquement et ne reçoit pas le GLB en retour.</p>
+    </aside>
+  </main>
+
+  <footer><span>ATELIER PNJ 3D</span><span>Projet personnel · GitHub Pages</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
